@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RATS!!!!</title>
+    <style>
+      :root {
+        --test-1: red;
+        --accent: #9b4621;
+        --accent-2: #d35400;
+        --gradient-start: #fdfcfb;
+        --gradient-end: #e2d1c3;
+        --page-background: #d7c592;
+      }
+      body {
+        background-color: var(--page-background);
+        background-image: url(https://media.baamboozle.com/uploads/images/230543/1616546789_886935_url.gif);
+        background-size: 300px;
+        background-position: 97% 90%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      .wrapper {
+        max-width: 50%;
+        display: block;
+        margin-top: 0%;
+        margin: auto;
+      }
+
+      .flex {
+        display: flex;
+        border-radius: 20px;
+        background-color: var(--gradient-start);
+      }
+      .flex div {
+        flex-basis: 50%;
+        display: inline-block;
+      }
+
+      .spacer {
+        padding: 50px;
+      }
+
+      h1 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 48px;
+        line-height: 0.9em;
+        color: var(--accent);
+      }
+
+      h2 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      ul {
+        font-family: Helvetica, sans-serif;
+        line-height: 1.5em;
+        list-style-type: none;
+        padding: 30px 30px 0px 30px;
+      }
+
+      li {
+        padding-bottom: 30px;
+        text-align: left;
+      }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background: var(--page-background);
+        background-image: linear-gradient(
+          to right,
+          var(--page-background),
+          var(--accent),
+          var(--page-background)
+        );
+      }
+
+      .header {
+        margin: 2em;
+      }
+
+      .subheader {
+        font-size: 20px;
+      }
+
+      .facts {
+        background-image: linear-gradient(
+          120deg,
+          var(--gradient-start) 0%,
+          var(--gradient-end) 100%
+        );
+        padding: 2em;
+        border-radius: 20px 0px 0px 20px;
+      }
+
+      #deco-image {
+        width: 300px;
+      }
+      .gallery {
+        padding: 2em;
+        display: block;
+        margin: auto;
+      }
+
+      #gallery-title {
+        color: black;
+      }
+      .gallery-item {
+        margin: 30px 0px 5px 20px;
+        width: 300px;
+        text-align: left;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        margin: 0px 0px 5px 0px;
+      }
+
+      button {
+        display: block;
+        padding: 15px 20px;
+        margin: auto;
+        font-size: 16px;
+        font-family: Helvetica, sans-serif;
+        font-weight: 600;
+        color: white;
+        background-color: var(--accent);
+        border: var(--accent) solid;
+        border-radius: 40px;
+        transition: ease all 200ms;
+      }
+
+      button:hover {
+        color: var(--accent);
+        background-color: var(--page-background);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!--Header-->
+
+      <div class="header">
+        <h1 class="page-title">WOW! I love rats!</h1>
+        <hr />
+        <p class="subheader">
+          Rats are awesome, rats are cool. If you hate them you're a fool.<br />
+          I love rats, you should too! Rats will be great friends for you!
+        </p>
+      </div>
+      <div class="flex">
+        <div class="facts">
+          <h2>Did you know?</h2>
+          <ul>
+            <li>
+              <strong>Rats are very social animals.</strong><br />
+              Rats love to hang out with eachother. They're
+              <em>extremely</em> social animals and they can get depressed
+              without friends. That's why you should always get rats in groups.
+            </li>
+            <li>
+              <strong>They're very clean!</strong><br />
+              Rats love to groom themselves. They do so, multiple times a day.
+              It's even part of their social behaviour, as the more dominant
+              ones groom the rats that are submissive to them.
+            </li>
+            <li>
+              <strong>A group is called a mischief!</strong><br />
+              As this word means playful misbehaviour, or trouble caused by
+              someone or something, you might wonder why we'd call these cute
+              little friends a mischief. Well, if you've ever met a rat, you'll
+              know. Rats, like cats, ferrets, dogs and other pets, love to chew
+              on things. Some rats are known to steal small items during
+              free-roam time and stash them away in a nest.
+            </li>
+
+            <li>
+              <strong>These rodents play fair!</strong><br />
+              Peace, love and understanding in the mischief can only come to
+              fruition with a little play-fighting. Rats dont just decide who's
+              the boss with these wrestling matches, but they also just kind of
+              like it!<br />
+              <a
+                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3582623/#:~:text=Play%20fighting%20in%20the%20rat,is%20a%20complex%2C%20dynamic%20interaction."
+                alt="Peering into the Dynamics of Social Interactions: Measuring Play Fighting in Rats"
+                >Read more about play-fighting</a
+              >
+            </li>
+            <img
+              id="deco-image"
+              src="https://64.media.tumblr.com/2f1cb1f3f8bb46eb25a939236c68a74b/9c579a90552f1d95-58/s1280x1920/e8bf4e0eae56da6a26f4b23d683fb276e0c5bfc9.png"
+            />
+          </ul>
+        </div>
+
+        <!--My rats!-->
+        <div class="gallery">
+          <h2 id="gallery-title">My rats!</h2>
+          <div class="gallery-item">
+            <a
+              href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/220/original/auschurk-egg.jpg?1660084507"
+              target="_blank"
+              ><img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/220/original/auschurk-egg.jpg?1660084507"
+                alt="white baby rat eats an egg on a pink platform"
+            /></a>
+            <span>Yum, egg!</span>
+          </div>
+          <div class="gallery-item">
+            <a
+              href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/226/original/popcorn-adventure.jpg?1660086093"
+              target="_blank"
+              ><img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/226/original/popcorn-adventure.jpg?1660086093"
+                alt="white adult rat eats popcorn out of a paper container"
+            /></a>
+            <span>Popcorn party</span>
+          </div>
+          <div class="gallery-item">
+            <a
+              href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/228/original/ratalin-dig.jpg?1660086537"
+              target="_blank"
+              ><img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/228/original/ratalin-dig.jpg?1660086537"
+                alt="white adult rat in a rat cage on soil, coloured paper shreds and wooden platforms"
+            /></a>
+            <span>Ratalin digging</span>
+          </div>
+          <div class="gallery-item">
+            <a
+              href="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/230/original/ratalin-egg.jpg?1660088429"
+              target="_blank"
+              ><img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/043/230/original/ratalin-egg.jpg?1660088429"
+                alt="two adult white rats. one enjoys an egg, the other is in a tree-shaped hammock"
+            /></a>
+            <span>More egg...!</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="spacer"></div>
+        <h1 id="quiz">But what if...</h1>
+        <p class="subheader">You could test your rat knowledge?</p>
+        <button class="quiz">Do the quiz!</button>
+        <div class="spacer"></div>
+        <p>Made by Marije Hammel</p>
+      </div>
+    </div>
+    <script>
+      function quiz() {
+        let h1 = document.querySelector("h1.page-title");
+        let name = prompt("What is your name?");
+        let quizPrompt = prompt(
+          "Can you get a single rat as a pet? Please answer with yes or no."
+        ).toLowerCase();
+        if (quizPrompt === "yes") {
+          alert(
+            "No! Rats are social animals. They can actually fall into depression without rat friends. Please get them at least 1 friend!"
+          );
+          h1.innerHTML = `${name} hasn't read the first fun fact.`;
+          window.scrollTo(0, 0);
+        } else if (quizPrompt === "no") {
+          alert(
+            "Very good! You should always get rats in at least pairs. They thrive in larger groups in a spacious cage."
+          );
+          h1.innerHTML = `${name} has read the fun facts.`;
+          window.scrollTo(0, 0);
+        } else {
+          alert("Please try again, smarty pants.");
+        }
+      }
+
+      let quizButton = document.querySelector("button.quiz");
+      quizButton.addEventListener("click", quiz);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+:root {
+    --accent-light: #c8d6e5;
+    --main: #341f97;
+    --body-text-dark: #222f3e;
+    --body-text-light: #fff;
+    --font-headers: "Fira Sans", sans-serif;
+    --font-body: "Barlow", sans-serif;
+}
+
+h1,
+h2 {
+    font-family: var(--font-headers);
+    color: var(--main);
+}
+
+h3 {
+    font-family: var(--font-body);
+}
+
+body {
+    margin-top: 2em !important;
+    font-family: var(--font-body);
+    color: var(--body-text-dark);
+}
+
+p {
+        font-family: var(--font-body);
+    }
+
+.display-date {
+    font-weight: 600;
+}
+/* Centers the weather app */
+.body-wrapper {
+    display: block;
+    margin: auto;
+}
+
+/* Card title and temp */
+/* Bootstrap item! */
+.card-title {
+    font-size: 46px;
+}
+
+.units:hover {
+    cursor:pointer;
+    text-decoration: underline;
+}
+
+#normal-units {
+    display:none;
+}
+
+#search-button {
+    border: var(--body-text-dark);
+}
+/* Bootstrap item! */
+
+.card {
+    padding: 3em;
+    background: #e0eafc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cfdef3, #e0eafc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cfdef3, #e0eafc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--body-text-dark);
+}
+
+.temp-icon {
+    font-size: 60px;
+    color: var(--main);
+}
+
+.current-temp {
+    color: var(--body-text-dark);
+    font-family: "Barlow", sans-serif;
+    font-size: 40px;
+    padding: 0 0 0 30px;
+    font-weight: 600;
+}
+
+.weekday-icon {
+    font-size: 40px;
+    text-align: center;
+    color: var(--main);
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Helvetica, sans-serif;
+      }
+      .center-wrapper {
+        justify-content: center;
+        text-align: center;
+      }
+
+      :root {
+        --text-color: #353b48;
+        --main-color: #1a64d6;
+        --accent-color:  #FFFBEF;
+        --bg-color: white;
+      }
+
+      h1 {
+        color: var(--main-color);
+        font-size: 34px;
+        line-height: 48px;
+        margin:0px;
+      }
+
+      h2 {
+        font-size: 34px;
+        color: var(--text-color);
+        font-weight: 400;
+        margin: 5px;
+      }
+
+      /*You did some wild stuff with integer font sizes and I'm already having enough trouble with round numbers ;) I rounded them up). */
+      h3 {
+        font-size: 19px;
+        color: var(--text-color);
+        margin: 5px;
+      }
+
+      p {
+        font-family: monospace;
+        font-size: 18px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 16px 0px;
+        padding: 0px;
+      }
+
+      li {
+        padding: 20px 0px;
+        margin: 0px 38%;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+      }
+
+      li:hover {
+        background-color: var(--accent-color);
+      }
+
+      button {
+        padding: 15px 26px;
+        justify-content: center;
+        border-radius: 30px;
+        border-width: 1px;
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+        color: var(--bg-color);
+        border-style: solid;
+        box-shadow: 3px 3px 4px rgb(182, 179, 179);
+        font-size: 16px;
+        transition: all 200ms ease;
+      }
+
+      button:hover {
+        background-color: var(--bg-color);
+        color:var(--main-color);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-wrapper">
+      <!--I like to use wrapper divs, makes life easier for me-->
+      <div>
+        <!--This is the header block div-->
+        <h1>
+          🌤
+          <br />
+          Currently 21° in Tokyo
+        </h1>
+        <h2>
+          <span>13°</span> / <span><strong>23°</strong></span>
+        </h2>
+      </div>
+      <div>
+        <!--This is the weather prediction block-->
+        <div>
+          <ul>
+            <li>
+                <h3>🌧 Tomorrow</h3>
+                <p>10° / <strong>22°</strong></p>
+            </li>
+            <li>
+                <h3>🌥 Saturday</h3>
+                <p>15° / <strong>17°</strong></p>
+            </li>
+            <li>
+                <h3>☀️ Sunday</h3>
+                <p>25° / <strong>28°</strong></p>
+            </li>
+          </ul>
+      </div>
+      <button>Change city</button>
+      <p>Coded by Marije Hammel</p>
+    </div>
+  </body>
+</html>

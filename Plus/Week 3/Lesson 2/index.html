@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function whatsYourName() {
+        let firstName = prompt("What's your first name");
+        if (firstName == null || firstName == "") {
+          alert("Too bad for you");
+        } else {
+          alert(`Hello, ${firstName}`);
+        }
+      }
+
+      whatsYourName();
+    </script>
+  </body>
+</html>
