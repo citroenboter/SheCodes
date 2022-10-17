@@ -24,12 +24,13 @@ body {
 }
 
 p {
-        font-family: var(--font-body);
-    }
+    font-family: var(--font-body);
+}
 
 .display-date {
     font-weight: 600;
 }
+
 /* Centers the weather app */
 .body-wrapper {
     display: block;
@@ -42,20 +43,16 @@ p {
     font-size: 46px;
 }
 
-.units:hover {
-    cursor:pointer;
+#get-location:hover {
+    cursor: pointer;
     text-decoration: underline;
-}
-
-#normal-units {
-    display:none;
 }
 
 #search-button {
     border: var(--body-text-dark);
 }
-/* Bootstrap item! */
 
+/* Bootstrap item! */
 .card {
     padding: 3em;
     background: #e0eafc;
