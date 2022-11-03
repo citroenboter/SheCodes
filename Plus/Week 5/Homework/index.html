@@ -34,7 +34,7 @@
             <div class="row">
               <div class="col-6">
                 <!--City name and search engine-->
-                <h2 class="card-title" id="city-header">Rotterdam</h2>
+                <h2 class="card-title" id="city-header">Rat</h2>
                 <p class="display-date">Fetching date and time...</p>
                 <form
                   class="input-group"
@@ -58,30 +58,42 @@
                     </button>
                   </div>
                 </form>
+                <span id="freedom-units"> I need Freedom Units </span
+                  >&ensp;|&ensp;
+                  <span id="get-location">Get Location</span>
               </div>
-
               <!--Current temperature-->
               <div
                 class="col-6 mb-2 d-flex align-items-end justify-content-center"
               >
-                <div class="temp-icon">
-                  <i class="fa-solid fa-cloud-sun"></i>
-                </div>
-                <div class="current-temp">
-                  <span class="temperature" id="current-temperature">28</span
-                  ><span class="unit">°C</span>
-                  <i class="fa-solid fa-temperature-arrow-down"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-5">
-                  <span id="freedom-units"> I need Freedom Units </span
-                  >&ensp;|&ensp;
-                  <span id="get-location">Get Location</span>
+                <div class="current-weather">
+                  <img
+                    id="icon-current"
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                  />
+                  <span id="current-temperature">38</span
+                  ><span class="unit" id="current-unit">°C</span>
+                  <div>
+                    <!--Current weather details table-->
+                    <table class="weather-details-table">
+                      <tr>
+                        <td><i class="fa-solid fa-droplet desc-icon"></i></td>
+                        <td><span id="current-humidity">Fetching humidity...</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-solid fa-wind desc-icon"></i></td>
+                        <td><span id="current-wind-speed">Fetching wind speed...</span></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa-solid fa-cloud-meatball desc-icon"></i></td>
+                        <td><span id="current-description">Fetching description...</td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+            </div>
           <!--5 day prediction-->
           <div class="row mt-5">
             <!--Day 1-->
@@ -174,7 +186,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <script type="text/javascript" src="src/index.js"></script>
   </body>
 </html>
