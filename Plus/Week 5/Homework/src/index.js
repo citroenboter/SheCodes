@@ -16,20 +16,26 @@ let dayNames = [
 displayDate.innerHTML = `${dayNames[currentDate.getDay()]} ${hrs}:${mins}`;
 
 // >> Fetch Weather
-function displayWeather(response) {
-  document.querySelector("#city-header").innerHTML = response.data.name;
+function displayCurrentWeather(response) {
+  document.querySelector("#city-header").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
 }
+
+function displayForecast(response) {}
 
 // >> Search bar script
 
 function searchCity(city) {
   //selects the input from the search bar
-  let apiKey = "34ae1065362d42545661451bda2b8a1f";
-  let apiURLCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiURLCurrent).then(displayWeather);
+  let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
+  let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}
+&units=metric`;
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}
+&units=metric`;
+  axios.get(apiUrlCurrent).then(displayCurrentWeather);
+  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function submitHandler(event) {
@@ -57,7 +63,7 @@ function localWeather(location) {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
 
-  let apiKey = "34ae1065362d42545661451bda2b8a1f";
-  let apiURLCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiURLCurrent).then(displayWeather);
+  let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
+  let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrlCurrent).then(displayCurrentWeather);
 }
