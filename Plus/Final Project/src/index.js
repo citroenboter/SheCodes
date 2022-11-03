@@ -21,6 +21,15 @@ function displayCurrentWeather(response) {
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
+  document.querySelector("#current-humidity").innerHTML =
+    response.data.temperature.humidity;
+  document.querySelector("#current-wind-speed").innerHTML =
+    response.data.wind.speed;
+  document.querySelector("#current-description").innerHTML =
+    response.data.condition.description;
+  document
+    .querySelector("#icon-current")
+    .setAttribute("src", response.data.condition.icon_url);
 }
 
 function displayForecast(response) {}
