@@ -23,8 +23,9 @@ function displayCurrentWeather(response) {
   );
   document.querySelector("#current-humidity").innerHTML =
     response.data.temperature.humidity;
-  document.querySelector("#current-wind-speed").innerHTML =
-    response.data.wind.speed;
+  document.querySelector("#current-wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document.querySelector("#current-description").innerHTML =
     response.data.condition.description;
   document
@@ -81,18 +82,38 @@ function localWeather(location) {
 
 let unit = "metric";
 
-function convertFreedom() {
-  document.querySelectorAll(".temp-unit").innerHTML = "°F";
-  document.querySelectorAll(".speed-unit").innerHTML = "mph";
+function convertFreedom(event) {
+  document
+    .querySelectorAll(".temp-unit")
+    .forEach((node) => (node.innerHTML = "°F"));
+  document
+    .querySelectorAll(".speed-unit")
+    .forEach((node) => (node.innerHTML = "mph"));
   unit = "imperial";
 }
 let freedomUnits = document.querySelector("#freedom-units");
-getLocation.addEventListener("click", () => {
+freedomUnits.addEventListener("click", () => {
   convertFreedom();
 });
 
-function convertNormal() {
-  document.querySelectorAll(".temp-unit").innerHTML = "°C";
-  document.querySelectorAll(".speed-unit").innerHTML = "km/h";
+function convertNormal(event) {
+  document
+    .querySelectorAll(".temp-unit")
+    .forEach((node) => (node.innerHTML = "°C"));
+  document
+    .querySelectorAll(".speed-unit")
+    .forEach((node) => (node.innerHTML = "km/h"));
   unit = "metric";
 }
+
+function formResubmit(event) {
+  if (searchForm === "") {
+    localWeather();
+  } else {
+    searchCity();
+  }
+}
+let normalUnits = document.querySelector("#normal-units");
+normalUnits.addEventListener("click", () => {
+  convertNormal(), formResubmit();
+});
