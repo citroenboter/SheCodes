@@ -40,9 +40,9 @@ function searchCity(city) {
   //selects the input from the search bar
   let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
   let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}
-&units=metric`;
+&units=${unit}`;
   let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}
-&units=metric`;
+&units=${unit}`;
   axios.get(apiUrlCurrent).then(displayCurrentWeather);
   axios.get(apiUrlForecast).then(displayForecast);
 }
@@ -73,6 +73,26 @@ function localWeather(location) {
   let longitude = location.coords.longitude;
 
   let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
-  let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
+  let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrlCurrent).then(displayCurrentWeather);
+}
+
+//Freedom units
+
+let unit = "metric";
+
+function convertFreedom() {
+  document.querySelectorAll(".temp-unit").innerHTML = "°F";
+  document.querySelectorAll(".speed-unit").innerHTML = "mph";
+  unit = "imperial";
+}
+let freedomUnits = document.querySelector("#freedom-units");
+getLocation.addEventListener("click", () => {
+  convertFreedom();
+});
+
+function convertNormal() {
+  document.querySelectorAll(".temp-unit").innerHTML = "°C";
+  document.querySelectorAll(".speed-unit").innerHTML = "km/h";
+  unit = "metric";
 }

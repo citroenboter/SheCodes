@@ -43,6 +43,11 @@ p {
     font-size: 46px;
 }
 
+#freedom-units:hover, #normal-units:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #get-location:hover {
     cursor: pointer;
     text-decoration: underline;
