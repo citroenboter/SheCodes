@@ -106,14 +106,7 @@ function convertNormal(event) {
   unit = "metric";
 }
 
-function formResubmit(event) {
-  if (searchForm === "") {
-    localWeather();
-  } else {
-    searchCity();
-  }
-}
 let normalUnits = document.querySelector("#normal-units");
 normalUnits.addEventListener("click", () => {
-  convertNormal(), formResubmit();
+  convertNormal();
 });
