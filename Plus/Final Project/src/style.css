@@ -27,11 +27,6 @@ p {
     font-family: var(--font-body);
 }
 
-.footer-banner {
-    text-align: center;
-    margin-top: 1em;
-}
-
 .display-date {
     font-weight: 600;
 }
@@ -48,6 +43,11 @@ p {
     font-size: 46px;
 }
 
+#freedom-units:hover, #normal-units:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #get-location:hover {
     cursor: pointer;
     text-decoration: underline;
@@ -56,6 +56,13 @@ p {
 #search-button {
     border: var(--body-text-dark);
 }
+
+/*fa icons*/
+.desc-icon {
+    padding-right: 0.5em;
+}
+
+/*shecodes icons*/
 
 /* Bootstrap item! */
 .card {
@@ -74,12 +81,19 @@ p {
     color: var(--main);
 }
 
-.current-temp {
+.current-weather {
     color: var(--body-text-dark);
-    font-family: "Barlow", sans-serif;
+    font-family: var(--font-body);
+}
+
+#current-temperature {
+    font-family: var(--font-body);
     font-size: 40px;
-    padding: 0 0 0 30px;
-    font-weight: 600;
+
+}
+
+#icon-current {
+    padding-bottom: 2em;
 }
 
 .weekday-icon {
