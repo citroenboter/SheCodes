@@ -43,15 +43,11 @@ p {
     font-size: 46px;
 }
 
-#freedom-units:hover, #normal-units:hover {
+#freedom-units:hover, #normal-units:hover, #get-location:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
-#get-location:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 #search-button {
     border: var(--body-text-dark);
@@ -88,16 +84,15 @@ p {
 
 #current-temperature {
     font-family: var(--font-body);
-    font-size: 40px;
-
-}
-
-#icon-current {
-    padding-bottom: 2em;
+    font-size: 30px;
 }
 
 .weekday-icon {
     font-size: 40px;
     text-align: center;
     color: var(--main);
+}
+
+#footer {
+    margin-top: 3em;
 }

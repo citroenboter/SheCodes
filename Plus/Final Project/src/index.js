@@ -13,7 +13,8 @@ let dayNames = [
   "Friday",
   "Saturday",
 ];
-displayDate.innerHTML = `${dayNames[currentDate.getDay()]} ${hrs}:${mins}`;
+let today = dayNames[currentDate.getDay()];
+displayDate.innerHTML = `${today} ${hrs}:${mins}`;
 
 // >> Fetch Weather
 function displayCurrentWeather(response) {
@@ -31,9 +32,45 @@ function displayCurrentWeather(response) {
   document
     .querySelector("#icon-current")
     .setAttribute("src", response.data.condition.icon_url);
+
+  coords = response.data.coordinates;
+
+  getForecast(coords);
 }
 
-function displayForecast(response) {}
+// function displayForecast(response) {
+//   let forecast = response.data.daily;
+//   let forecastContainer = document.querySelector("#forecast-container");
+//   forecast.forEach(function (forecastDay, index) {
+//     if (index < 5) {
+//       forecastContainer.innerHTML += `<div class="forecast col"><img
+//       src="${forecastDay.condition.icon_url}"
+//     />
+//     <h3 class="card-subtitle">${dayNames[index]}</h3>
+//     <div class="card-text">
+//       <strong
+//         ><span class="temperature">${Math.round(
+//           forecastDay.temperature.maximum
+//         )}</span
+//         ><span class="temp-unit">°C</span></strong
+//       >
+//       / <span class="temperature">${Math.round(
+//         forecastDay.temperature.minimum
+//       )}</span><span class="temp-unit">°C</span>
+//     </div>
+//     </div>`;
+//     }
+//     if (index > 5) {
+//       forecastContainer.removeChild(forecastContainer.querySelectorAll());
+//     }
+//   });
+// }
+
+function getForecast(coordinates) {
+  let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 // >> Search bar script
 
@@ -42,37 +79,36 @@ function searchCity(city) {
   let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
   let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}
 &units=${unit}`;
-  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}
-&units=${unit}`;
   axios.get(apiUrlCurrent).then(displayCurrentWeather);
-  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function submitHandler(event) {
+  event.preventDefault();
   let city = document.querySelector("#city-search").value;
   searchCity(city);
 }
 
 let searchForm = document.querySelector("#search-bar");
-searchForm.addEventListener("submit", () => {
-  submitHandler();
-});
+searchForm.addEventListener("submit", submitHandler);
 
 //Current temp
 
 function fetchCurrentLocation(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(localWeather);
 }
 
 let getLocation = document.querySelector("#get-location");
-getLocation.addEventListener("click", () => {
-  fetchCurrentLocation();
-});
+getLocation.addEventListener("click", fetchCurrentLocation);
 
 function localWeather(location) {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
 
+  searchByCoords(latitude, longitude);
+}
+
+function searchByCoords(latitude, longitude) {
   let apiKey = "bc8b34dt7ae2e53dfe98ff6od201f7a2";
   let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrlCurrent).then(displayCurrentWeather);
@@ -81,32 +117,37 @@ function localWeather(location) {
 //Freedom units
 
 let unit = "metric";
+let coords = {};
 
-function convertFreedom(event) {
+function convertFreedom() {
   document
     .querySelectorAll(".temp-unit")
     .forEach((node) => (node.innerHTML = "°F"));
   document
     .querySelectorAll(".speed-unit")
     .forEach((node) => (node.innerHTML = "mph"));
-  unit = "imperial";
 }
 let freedomUnits = document.querySelector("#freedom-units");
 freedomUnits.addEventListener("click", () => {
+  unit = "imperial";
   convertFreedom();
+  searchByCoords(coords.latitude, coords.longitude);
 });
 
-function convertNormal(event) {
+function convertNormal() {
   document
     .querySelectorAll(".temp-unit")
     .forEach((node) => (node.innerHTML = "°C"));
   document
     .querySelectorAll(".speed-unit")
     .forEach((node) => (node.innerHTML = "km/h"));
-  unit = "metric";
 }
 
 let normalUnits = document.querySelector("#normal-units");
 normalUnits.addEventListener("click", () => {
+  unit = "metric";
   convertNormal();
+  searchByCoords(coords.latitude, coords.longitude);
 });
+
+searchCity("Weed");
