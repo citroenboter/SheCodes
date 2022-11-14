@@ -38,6 +38,8 @@ function displayCurrentWeather(response) {
   getForecast(coords);
 }
 
+//forecast gives a weird bug. I need to deliver so I'll add this later even after I'm already done ;)
+
 // function displayForecast(response) {
 //   let forecast = response.data.daily;
 //   let forecastContainer = document.querySelector("#forecast-container");
